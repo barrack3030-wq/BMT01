@@ -13,15 +13,13 @@ export function BmtLogo({
 }: BmtLogoProps) {
   const isDark = theme === 'dark';
 
-  // Colors based on brand guidelines
-  const deepGreen = '#0B3D2E';
-  const institutionalGreen = '#145A42';
-  const brightGreen = '#1D7656';
-  const gold = '#B69A5A';
-  const textPrimary = isDark ? '#FFFFFF' : '#0B3D2E';
-  const textSecondary = isDark ? '#F7F6F1/80' : '#6B746F';
-  const emblemBg = isDark ? '#FFFFFF' : '#0B3D2E';
-  const emblemFg = isDark ? '#0B3D2E' : '#FFFFFF';
+  // Brand palette taken from the supplied BMT Al-Muhajirin logo.
+  const deepGreen = '#0A6B35';
+  const darkGreen = '#075126';
+  const brightGreen = '#8BCB35';
+  const lime = '#B4D334';
+  const gold = '#E0A51A';
+  const textPrimary = isDark ? '#FFFFFF' : darkGreen;
 
   const Emblem = ({ size = 44 }: { size?: number }) => (
     <svg
@@ -33,65 +31,12 @@ export function BmtLogo({
       className="shrink-0 drop-shadow-sm"
       aria-label="Logo Lambang BMT Al-Muhajirin"
     >
-      {/* Outer 8-Point Islamic Star (Rub el Hizb) Background */}
-      <g transform="rotate(0 50 50)">
-        <rect
-          x="12"
-          y="12"
-          width="76"
-          height="76"
-          rx="6"
-          fill={deepGreen}
-          stroke={gold}
-          strokeWidth="2"
-        />
-      </g>
-      <g transform="rotate(45 50 50)">
-        <rect
-          x="12"
-          y="12"
-          width="76"
-          height="76"
-          rx="6"
-          fill={institutionalGreen}
-          stroke={gold}
-          strokeWidth="1.5"
-          fillOpacity="0.95"
-        />
-      </g>
-
-      {/* Inner Concentric Circle with Gold Accent Border */}
-      <circle cx="50" cy="50" r="34" fill={deepGreen} stroke={gold} strokeWidth="1.75" />
-      <circle cx="50" cy="50" r="30" fill={brightGreen} fillOpacity="0.25" stroke={gold} strokeWidth="0.75" strokeDasharray="2 2" />
-
-      {/* Geometric Islamic Star Accent */}
-      <path
-        d="M50 20 L53 32 L65 35 L55 42 L58 54 L50 47 L42 54 L45 42 L35 35 L47 32 Z"
-        fill={gold}
-        fillOpacity="0.3"
-      />
-
-      {/* Stylized Islamic Crescent & Wheat / Pillar Motif */}
-      {/* Left Crescent */}
-      <path
-        d="M48 27 C36 29 28 40 30 52 C32 64 43 72 55 70 C44 70 36 61 36 50 C36 39 42 30 48 27 Z"
-        fill={gold}
-      />
-
-      {/* Central Heritage Motif: Letter M in Classic Form & Dome Arch */}
-      <path
-        d="M42 66 L42 46 L49 56 L56 46 L56 66 L52 66 L52 52 L49 57 L46 52 L46 66 Z"
-        fill="#FFFFFF"
-      />
-
-      {/* Islamic Arch Pinnacle / Star on top */}
-      <polygon
-        points="50,23 52,28 57,28 53,31 55,36 50,33 45,36 47,31 43,28 48,28"
-        fill={gold}
-      />
-
-      {/* Tiny Base Pedestal Line */}
-      <line x1="38" y1="69" x2="62" y2="69" stroke={gold} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M50 5 L93 50 L50 95 L7 50 Z" fill={brightGreen} stroke={gold} strokeWidth="2" />
+      <path d="M50 12 L86 50 L50 88 L14 50 Z" fill={deepGreen} stroke="#FFFFFF" strokeWidth="2" />
+      <circle cx="50" cy="50" r="30" fill={darkGreen} stroke={gold} strokeWidth="2" />
+      <path d="M33 66 V38 H42 V53 L50 44 L58 53 V38 H67 V66 H58 V54 L50 63 L42 54 V66 Z" fill="#FFFFFF" />
+      <path d="M43 31 L50 22 L57 31" stroke={lime} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="50" cy="73" r="3" fill={gold} />
     </svg>
   );
 
@@ -104,38 +49,27 @@ export function BmtLogo({
   }
 
   return (
-    <div className={`inline-flex items-center gap-3.5 ${className}`}>
-      <Emblem size={variant === 'compact' ? 42 : 46} />
-      <div className="flex flex-col text-left">
-        <div className="flex items-baseline gap-1.5">
-          <span
-            className="font-serif font-bold tracking-tight text-[18px] sm:text-[20px] leading-tight"
-            style={{ color: textPrimary }}
-          >
-            BMT AL-MUHAJIRIN
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 mt-0.5">
-          <span
-            className="text-[10.5px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase"
-            style={{ color: isDark ? '#B69A5A' : '#145A42' }}
-          >
-            KOPERASI SIMPAN PINJAM SYARIAH
-          </span>
-          <span className="text-[10px] text-[#B69A5A]">•</span>
-          <span
-            className="text-[10px] sm:text-[10.5px] font-medium tracking-wider"
-            style={{ color: isDark ? 'rgba(247, 246, 241, 0.7)' : '#6B746F' }}
-          >
-            TOILI, BANGGAI
-          </span>
-        </div>
+    <div className={`inline-flex items-center gap-3 ${className}`}>
+      <Emblem size={variant === 'compact' ? 48 : 52} />
+      <div className="flex flex-col text-left leading-none">
+        <span
+          className="font-serif font-bold tracking-tight text-[19px] sm:text-[21px]"
+          style={{ color: textPrimary }}
+        >
+          BMT AL-MUHAJIRIN
+        </span>
+        <span
+          className="mt-1 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase"
+          style={{ color: isDark ? '#B4D334' : deepGreen }}
+        >
+          KOPERASI SIMPAN PINJAM SYARIAH
+        </span>
         {showTagline && (
           <span
-            className="text-[11px] italic font-serif mt-1 tracking-wide"
-            style={{ color: isDark ? '#F7F6F1/90' : '#145A42' }}
+            className="mt-1 text-[9px] italic font-serif tracking-wide"
+            style={{ color: isDark ? '#F4C542' : gold }}
           >
-            "Berjuang Bersama Ummat Keluar Dari Riba"
+            Berjuang Bersama Ummat Keluar Dari Riba
           </span>
         )}
       </div>

@@ -6,8 +6,6 @@ interface HeroSliderProps {
   setActivePage: (page: PageType, subSection?: string) => void;
 }
 
-// Temporary editorial images. Replace these URLs with the real front-of-office
-// photos of BMT Al-Muhajirin once the office photos are added to the repository.
 const slides = [
   {
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=88',
@@ -30,13 +28,11 @@ export function HeroSlider({ setActivePage }: HeroSliderProps) {
     const timer = window.setInterval(() => {
       setActive((current) => (current + 1) % slides.length);
     }, 5500);
-
     return () => window.clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] overflow-hidden bg-[#0B3D2E] text-white">
-      {/* Full-screen photo slider */}
+    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#075126] text-white">
       {slides.map((slide, index) => (
         <div
           key={slide.image}
@@ -52,15 +48,15 @@ export function HeroSlider({ setActivePage }: HeroSliderProps) {
         </div>
       ))}
 
-      {/* Calm institutional overlay: keeps the photograph visible while making text readable */}
-      <div className="absolute inset-0 bg-[#06281f]/55" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#06281f]/75 via-[#06281f]/35 to-[#06281f]/20" />
+      {/* Brand-colored cinematic overlay */}
+      <div className="absolute inset-0 bg-[#063D1D]/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#063D1D]/35 via-[#075126]/45 to-[#042A16]/70" />
 
-      {/* Centered hero content */}
-      <div className="relative z-10 flex min-h-[calc(100vh-80px)] items-center justify-center px-6 py-20 text-center">
+      {/* Centered institutional hero */}
+      <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center justify-center px-6 py-20 text-center">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-7 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-white/90">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#B69A5A]" />
+          <div className="mb-6 flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-white">
+            <span className="h-2 w-2 rounded-full bg-[#B4D334] shadow-[0_0_0_4px_rgba(180,211,52,0.18)]" />
             <span>BMT AL-MUHAJIRIN</span>
           </div>
 
@@ -73,14 +69,15 @@ export function HeroSlider({ setActivePage }: HeroSliderProps) {
             Berjuang bersama anggota untuk membangun ekonomi yang lebih mandiri melalui layanan keuangan berbasis koperasi dan prinsip syariah.
           </p>
 
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          {/* Premium dimensional CTA */}
+          <div className="mt-10 flex justify-center">
             <button
               id="hero-primary-cta"
               onClick={() => setActivePage('profil')}
-              className="inline-flex items-center justify-center gap-2 border border-white bg-white px-7 py-3.5 text-sm font-semibold text-[#0B3D2E] transition-colors hover:bg-white/90"
+              className="group relative inline-flex min-w-[205px] items-center justify-center gap-3 rounded-[4px] border border-[#CBE66A]/70 bg-gradient-to-b from-[#A8D63D] to-[#79B52C] px-8 py-4 text-sm font-bold text-[#063D1D] shadow-[0_3px_0_#4C831D,0_12px_28px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#B7E34C] hover:to-[#86C936] hover:shadow-[0_4px_0_#4C831D,0_16px_34px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.6)] active:translate-y-[2px] active:shadow-[0_1px_0_#4C831D,0_7px_16px_rgba(0,0,0,0.22)]"
             >
-              Kenal Lebih Dekat
-              <ArrowRight className="h-4 w-4" />
+              <span>Kenal Lebih Dekat</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </button>
           </div>
 
@@ -91,14 +88,14 @@ export function HeroSlider({ setActivePage }: HeroSliderProps) {
                 type="button"
                 onClick={() => setActive(index)}
                 aria-label={`Tampilkan foto ${index + 1}`}
-                className={`h-1 transition-all duration-300 ${index === active ? 'w-10 bg-white' : 'w-5 bg-white/45 hover:bg-white/70'}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${index === active ? 'w-11 bg-[#B4D334] shadow-[0_0_8px_rgba(180,211,52,0.45)]' : 'w-5 bg-white/45 hover:bg-white/75'}`}
               />
             ))}
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70 sm:flex">
+      <div className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white/70 sm:flex">
         <ArrowDown className="h-3.5 w-3.5" />
         Jelajahi
       </div>

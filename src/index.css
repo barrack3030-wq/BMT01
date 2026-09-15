@@ -10,7 +10,6 @@
   --color-muted-gray: #68716C;
 }
 
-/* BMT Al-Muhajirin — restrained institutional visual system. */
 @layer base {
   html {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -44,12 +43,19 @@
   p { line-height: 1.75; }
 }
 
-/* Remove the extra notice strip: the logo and navigation should carry the header. */
-header > div:first-child { display: none !important; }
-header > div:nth-child(2) { height: 72px !important; }
-header { box-shadow: none !important; background: rgba(255,255,255,0.98) !important; }
+/* Header: logo → navigation → contact. No address strip and no membership button. */
+header {
+  box-shadow: 0 1px 0 rgba(32, 37, 34, 0.08) !important;
+  background: rgba(255,255,255,0.98) !important;
+}
 header nav { gap: 1.35rem !important; font-size: 13.5px !important; }
 header nav button { letter-spacing: 0 !important; }
+
+/* The original HomePage still contains the previous hero so its following
+   institutional sections remain untouched. Hide only that first legacy hero. */
+.home-page-active > div > section:first-child {
+  display: none !important;
+}
 
 main section { scroll-margin-top: 80px; }
 button, a { border-radius: 2px; }
@@ -58,7 +64,6 @@ button { letter-spacing: 0 !important; }
 .font-serif { font-family: 'Source Serif 4', Georgia, serif !important; }
 .font-sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important; }
 
-/* Reduce the oversized generated text scale while keeping hierarchy. */
 .text-\[17px\], .text-\[18px\], .text-\[19px\] { font-size: 16px !important; }
 .text-\[16px\] { font-size: 15px !important; }
 .text-2xl { font-size: 1.35rem !important; }
@@ -80,7 +85,7 @@ img { display: block; }
 ::-webkit-scrollbar-thumb:hover { background: #145A42; }
 
 @media (max-width: 1023px) {
-  header > div:nth-child(2) { height: 68px !important; }
+  header nav { gap: 1rem !important; }
   h1 { font-size: clamp(2.1rem, 8vw, 3.25rem) !important; }
   h2 { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
 }

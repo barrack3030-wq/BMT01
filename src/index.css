@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest: #0B3D2E;
-  --color-institutional: #145A42;
-  --color-emerald-brand: #1D7656;
-  --color-warmwhite: #F7F6F1;
+  --color-forest: #075126;
+  --color-institutional: #0A6B35;
+  --color-emerald-brand: #2F8D3B;
+  --color-brand-green: #0A6B35;
+  --color-brand-lime: #B4D334;
+  --color-brand-gold: #E0A51A;
+  --color-warmwhite: #F8FAF3;
   --color-charcoal: #202522;
-  --color-muted-gold: #A88D4A;
   --color-muted-gray: #68716C;
 }
 
@@ -43,22 +45,23 @@
   p { line-height: 1.75; }
 }
 
-/* Header: logo → navigation → contact. No address strip and no membership button. */
+/* BMT AL-MUHAJIRIN brand system: deep green, fresh green, lime and warm gold. */
 header {
-  box-shadow: 0 1px 0 rgba(32, 37, 34, 0.08) !important;
+  box-shadow: 0 1px 0 rgba(7, 81, 38, 0.14) !important;
   background: rgba(255,255,255,0.98) !important;
 }
 header nav { gap: 1.35rem !important; font-size: 13.5px !important; }
-header nav button { letter-spacing: 0 !important; }
+header nav button { gap: 0.3rem !important; letter-spacing: 0 !important; }
+header nav button:hover { color: #0A6B35 !important; }
 
-/* The original HomePage still contains the previous hero so its following
-   institutional sections remain untouched. Hide only that first legacy hero. */
+/* The original HomePage still contains the previous hero. Hide only that first
+   legacy hero because the dedicated HeroSlider is now the homepage hero. */
 .home-page-active > div > section:first-child {
   display: none !important;
 }
 
 main section { scroll-margin-top: 80px; }
-button, a { border-radius: 2px; }
+button, a { border-radius: 3px; }
 button { letter-spacing: 0 !important; }
 
 .font-serif { font-family: 'Source Serif 4', Georgia, serif !important; }
@@ -70,19 +73,19 @@ button { letter-spacing: 0 !important; }
 .text-3xl { font-size: 1.75rem !important; }
 .text-5xl { font-size: 2.75rem !important; }
 .text-6xl { font-size: 3.25rem !important; }
-.text-\[\#B69A5A\] { color: #A88D4A !important; }
+.text-\[\#B69A5A\] { color: #E0A51A !important; }
 
 img { display: block; }
 
 :focus-visible {
-  outline: 2px solid #145A42;
+  outline: 2px solid #B4D334;
   outline-offset: 3px;
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #F7F6F1; }
-::-webkit-scrollbar-thumb { background: #C7CEC9; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #145A42; }
+::-webkit-scrollbar-track { background: #F3F7ED; }
+::-webkit-scrollbar-thumb { background: #B9CBB9; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0A6B35; }
 
 @media (max-width: 1023px) {
   header nav { gap: 1rem !important; }

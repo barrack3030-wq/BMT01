@@ -1,0 +1,6 @@
+{
+  "name": "BMT Al-Muhajirin - Koperasi Simpan Pinjam Syariah",
+  "description": "Website resmi BMT Al-Muhajirin Toili. Berjuang Bersama Ummat Keluar Dari Riba. Lembaga keuangan syariah berbasis koperasi sejak 1998 di Kabupaten Banggai.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { PageType, ProductItem, ArticleItem } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { HeroSlider } from './components/HeroSlider';
 import { MembershipModal } from './components/MembershipModal';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { HomePage } from './pages/HomePage';
@@ -16,18 +17,15 @@ import { BeritaPage } from './pages/BeritaPage';
 import { GaleriPage } from './pages/GaleriPage';
 import { KontakPage } from './pages/KontakPage';
 import { MessageCircle } from 'lucide-react';
-import { COOP_INFO } from './data/cooperativeData';
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageType>('beranda');
   const [activeSubTab, setActiveSubTab] = useState<string | undefined>(undefined);
-  
-  // Modals state
+
   const [isMembershipModalOpen, setIsMembershipModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<ArticleItem | null>(null);
 
-  // Scroll to top when page changes
   const handlePageChange = (page: PageType, subSection?: string) => {
     setActivePage(page);
     setActiveSubTab(subSection);
@@ -48,23 +46,23 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#202522] selection:bg-[#0B3D2E] selection:text-white font-sans">
-      
-      {/* Header */}
       <Header
         activePage={activePage}
         setActivePage={handlePageChange}
         onOpenMembershipModal={() => setIsMembershipModalOpen(true)}
       />
 
-      {/* Main Content Area */}
-      <main className="flex-1">
+      <main className={activePage === 'beranda' ? 'home-page-active flex-1' : 'flex-1'}>
         {activePage === 'beranda' && (
-          <HomePage
-            setActivePage={handlePageChange}
-            onOpenMembership={() => setIsMembershipModalOpen(true)}
-            onSelectProduct={handleSelectProduct}
-            onSelectArticle={handleSelectArticle}
-          />
+          <>
+            <HeroSlider setActivePage={handlePageChange} />
+            <HomePage
+              setActivePage={handlePageChange}
+              onOpenMembership={() => setIsMembershipModalOpen(true)}
+              onSelectProduct={handleSelectProduct}
+              onSelectArticle={handleSelectArticle}
+            />
+          </>
         )}
 
         {activePage === 'profil' && (
@@ -83,18 +81,11 @@ export default function App() {
         )}
 
         {activePage === 'visi-misi' && (
-          <VisiMisiPage
-            onOpenMembership={() => setIsMembershipModalOpen(true)}
-          />
+          <VisiMisiPage onOpenMembership={() => setIsMembershipModalOpen(true)} />
         )}
 
-        {activePage === 'struktur-organisasi' && (
-          <StrukturOrganisasiPage />
-        )}
-
-        {activePage === 'legalitas' && (
-          <LegalitasPage />
-        )}
+        {activePage === 'struktur-organisasi' && <StrukturOrganisasiPage />}
+        {activePage === 'legalitas' && <LegalitasPage />}
 
         {activePage === 'produk-layanan' && (
           <ProdukLayananPage
@@ -119,28 +110,20 @@ export default function App() {
           />
         )}
 
-        {activePage === 'galeri' && (
-          <GaleriPage />
-        )}
-
-        {activePage === 'kontak' && (
-          <KontakPage />
-        )}
+        {activePage === 'galeri' && <GaleriPage />}
+        {activePage === 'kontak' && <KontakPage />}
       </main>
 
-      {/* Footer */}
       <Footer
         setActivePage={handlePageChange}
         onOpenMembershipModal={() => setIsMembershipModalOpen(true)}
       />
 
-      {/* Membership Registration Multi-Step Modal */}
       <MembershipModal
         isOpen={isMembershipModalOpen}
         onClose={() => setIsMembershipModalOpen(false)}
       />
 
-      {/* Product Detail Modal */}
       <ProductDetailModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
@@ -150,7 +133,6 @@ export default function App() {
         }}
       />
 
-      {/* Floating WhatsApp Quick Contact Button */}
       <a
         id="floating-wa-btn"
         href={`https://wa.me/6281245678901?text=Assalamu'alaikum%20BMT%20Al%20Muhajirin%20Toili,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20koperasi`}
@@ -162,7 +144,6 @@ export default function App() {
         <MessageCircle className="w-4 h-4 text-emerald-300" />
         <span className="hidden sm:inline">Layanan WhatsApp</span>
       </a>
-
     </div>
   );
 }

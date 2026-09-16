@@ -92,6 +92,12 @@ export default function App() {
         onOpenMembershipModal={() => setIsMembershipModalOpen(true)}
       />
 
+      <div className="overflow-hidden border-y border-[#D6A900] bg-[#F4C542] text-[#174D2C]">
+        <marquee direction="left" scrollamount="5" className="py-3.5 text-sm font-semibold tracking-wide">
+          Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi
+        </marquee>
+      </div>
+
       <main className={activePage === 'beranda' ? 'home-page-active flex-1' : 'flex-1'}>
         {activePage === 'beranda' && (
           <>

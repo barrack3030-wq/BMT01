@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PageType, ProductItem, ArticleItem } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -18,17 +18,58 @@ import { GaleriPage } from './pages/GaleriPage';
 import { KontakPage } from './pages/KontakPage';
 import { MessageCircle } from 'lucide-react';
 
+const VALID_PAGES: PageType[] = [
+  'beranda', 'profil', 'sejarah', 'visi-misi', 'struktur-organisasi', 'legalitas',
+  'produk-layanan', 'keanggotaan', 'berita', 'galeri', 'kontak'
+];
+
+function routeFromHash() {
+  const raw = window.location.hash.replace(/^#\/?/, '');
+  const parts = raw.split('/').filter(Boolean).map((part) => decodeURIComponent(part));
+  const page = (parts[0] || 'beranda') as PageType;
+  return {
+    page: VALID_PAGES.includes(page) ? page : 'beranda',
+    subSection: parts[1]
+  };
+}
+
 export default function App() {
-  const [activePage, setActivePage] = useState<PageType>('beranda');
-  const [activeSubTab, setActiveSubTab] = useState<string | undefined>(undefined);
+  const initialRoute = routeFromHash();
+  const [activePage, setActivePage] = useState<PageType>(initialRoute.page);
+  const [activeSubTab, setActiveSubTab] = useState<string | undefined>(initialRoute.subSection);
 
   const [isMembershipModalOpen, setIsMembershipModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<ArticleItem | null>(null);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const route = routeFromHash();
+      setActivePage(route.page);
+      setActiveSubTab(route.subSection);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+    };
+  }, []);
+
   const handlePageChange = (page: PageType, subSection?: string) => {
     setActivePage(page);
     setActiveSubTab(subSection);
+
+    const hash = subSection
+      ? `#/${page}/${encodeURIComponent(subSection)}`
+      : `#/${page}`;
+
+    if (window.location.hash !== hash) {
+      window.history.pushState({ page, subSection }, '', hash);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -39,8 +80,7 @@ export default function App() {
   const handleSelectArticle = (article: ArticleItem | null) => {
     setSelectedArticle(article);
     if (article) {
-      setActivePage('berita');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      handlePageChange('berita', article.category);
     }
   };
 

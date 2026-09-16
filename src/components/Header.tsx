@@ -81,7 +81,7 @@ export function Header({ activePage, setActivePage, onOpenMembershipModal }: Hea
         <button
           type="button"
           onClick={() => go('beranda')}
-          className="shrink-0 border-0 bg-transparent p-0 text-left"
+          className="shrink-0 border-0 bg-transparent p-0 text-left lg:ml-[88px]"
           aria-label="Kembali ke Beranda BMT Al-Muhajirin"
         >
           <BmtLogo variant="compact" />

@@ -16,6 +16,13 @@ export function Footer({ setActivePage }: FooterProps) {
     <footer className="bg-[#0B3D2E] text-white pt-20 pb-12 border-t border-[#145A42]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
+        {/* Latest information ticker */}
+        <div className="mb-10 overflow-hidden border-y border-[#D6A900] bg-[#F4C542] text-[#174D2C]">
+          <marquee direction="left" scrollamount="5" className="py-3.5 text-sm font-semibold tracking-wide">
+            Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi
+          </marquee>
+        </div>
+
         {/* Main Footer Grid: 4 Columns per Section 17 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           
@@ -39,50 +46,32 @@ export function Footer({ setActivePage }: FooterProps) {
             </h4>
             <ul className="space-y-2.5 text-sm text-[#F7F6F1]/75">
               <li>
-                <button
-                  onClick={() => handleNav('beranda')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('beranda')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Beranda
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('profil')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('profil')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Profil Koperasi
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('sejarah')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('sejarah')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Sejarah
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('visi-misi')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('visi-misi')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Visi & Misi
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('struktur-organisasi')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('struktur-organisasi')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Struktur Organisasi
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('legalitas')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('legalitas')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Legalitas
                 </button>
               </li>
@@ -96,34 +85,22 @@ export function Footer({ setActivePage }: FooterProps) {
             </h4>
             <ul className="space-y-2.5 text-sm text-[#F7F6F1]/75">
               <li>
-                <button
-                  onClick={() => handleNav('produk-layanan', 'simpanan')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('produk-layanan', 'simpanan')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Simpanan
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('produk-layanan', 'pembiayaan')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('produk-layanan', 'pembiayaan')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Pembiayaan
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('produk-layanan', 'layanan')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('produk-layanan', 'layanan')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Layanan Anggota
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleNav('produk-layanan', 'unggulan')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
+                <button onClick={() => handleNav('produk-layanan', 'unggulan')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Produk Unggulan
                 </button>
               </li>
@@ -151,35 +128,19 @@ export function Footer({ setActivePage }: FooterProps) {
 
         </div>
 
-        {/* Latest information ticker */}
-        <div className="my-8 overflow-hidden border-y border-[#D6A900] bg-[#F4C542] text-[#174D2C]">
-          <marquee direction="left" scrollamount="5" className="py-3.5 text-sm font-semibold tracking-wide">
-            Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi
-          </marquee>
-        </div>
-
         {/* Bottom bar: Copyright BMT Al-Muhajirin. Clean and restrained */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#F7F6F1]/60">
           <p>© 2026 BMT Al-Muhajirin. Seluruh hak cipta dilindungi undang-undang.</p>
           <div className="flex items-center gap-6">
-            <button
-              onClick={() => handleNav('legalitas')}
-              className="hover:text-white transition-colors cursor-pointer"
-            >
+            <button onClick={() => handleNav('legalitas')} className="hover:text-white transition-colors cursor-pointer">
               Kepatuhan Syariat
             </button>
             <span>•</span>
-            <button
-              onClick={() => handleNav('keanggotaan')}
-              className="hover:text-white transition-colors cursor-pointer"
-            >
+            <button onClick={() => handleNav('keanggotaan')} className="hover:text-white transition-colors cursor-pointer">
               Tata Tertib Anggota
             </button>
             <span>•</span>
-            <button
-              onClick={() => handleNav('kontak')}
-              className="hover:text-white transition-colors cursor-pointer"
-            >
+            <button onClick={() => handleNav('kontak')} className="hover:text-white transition-colors cursor-pointer">
               Kontak Layanan
             </button>
           </div>

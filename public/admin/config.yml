@@ -15,8 +15,8 @@ public_folder: "/uploads"
 
 # Pengaturan identitas dan bahasa antarmuka
 locale: "id"
-site_url: "/"
-display_url: "https://bmtalmuhajirin.co.id"
+site_url: "https://barrack3030-wq.github.io/BMT01"
+display_url: "https://barrack3030-wq.github.io/BMT01"
 
 # Daftar Koleksi Konten Website yang Disederhanakan
 collections:

@@ -16,7 +16,11 @@ export function Header({ activePage, setActivePage, onOpenMembershipModal }: Hea
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<DropdownKey | null>(null);
 
-  const go = (page: PageType, subSection?: string) => {
+  const go = (page: PageType | 'admin', subSection?: string) => {
+    if (page === 'admin') {
+      window.location.href = './admin/';
+      return;
+    }
     setActivePage(page, subSection);
     setActiveDropdown(null);
     setMobileExpanded(null);
@@ -64,6 +68,7 @@ export function Header({ activePage, setActivePage, onOpenMembershipModal }: Hea
         { label: 'Kegiatan', page: 'berita', sub: 'Kegiatan' },
         { label: 'Pengumuman', page: 'berita', sub: 'Pengumuman' },
         { label: 'Kontak', page: 'kontak' },
+        { label: 'Kelola Konten (CMS)', page: 'admin' as any },
       ],
     },
   };

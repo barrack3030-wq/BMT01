@@ -26,9 +26,15 @@ const VALID_PAGES: PageType[] = [
 function routeFromHash() {
   const raw = window.location.hash.replace(/^#\/?/, '');
   const parts = raw.split('/').filter(Boolean).map((part) => decodeURIComponent(part));
-  const page = (parts[0] || 'beranda') as PageType;
+  const page = parts[0] || 'beranda';
+  
+  if (page === 'admin') {
+    window.location.href = './admin/';
+    return { page: 'beranda' as PageType, subSection: undefined };
+  }
+
   return {
-    page: VALID_PAGES.includes(page) ? page : 'beranda',
+    page: (VALID_PAGES.includes(page as PageType) ? page : 'beranda') as PageType,
     subSection: parts[1]
   };
 }

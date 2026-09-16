@@ -151,6 +151,13 @@ export function Footer({ setActivePage }: FooterProps) {
 
         </div>
 
+        {/* Latest information ticker */}
+        <div className="my-8 overflow-hidden border-y border-[#D6A900] bg-[#F4C542] text-[#174D2C]">
+          <marquee direction="left" scrollamount="5" className="py-3.5 text-sm font-semibold tracking-wide">
+            Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi
+          </marquee>
+        </div>
+
         {/* Bottom bar: Copyright BMT Al-Muhajirin. Clean and restrained */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#F7F6F1]/60">
           <p>© 2026 BMT Al-Muhajirin. Seluruh hak cipta dilindungi undang-undang.</p>

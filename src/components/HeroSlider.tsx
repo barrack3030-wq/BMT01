@@ -28,9 +28,9 @@ export function HeroSlider({ setActivePage }: HeroSliderProps) {
         </div>
       ))}
 
-      {/* Deep-green brand wash: photos remain visible while the whole hero stays green */}
-      <div className="absolute inset-0 bg-[#06451F]/65 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-[#06451F]/35" />
+      {/* Refined green brand wash: keep the BMT identity while revealing more photographic detail. */}
+      <div className="absolute inset-0 bg-[#06451F]/50 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-[#06451F]/25" />
 
       <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center justify-center px-6 py-20 text-center">
         <div className="mx-auto max-w-4xl">

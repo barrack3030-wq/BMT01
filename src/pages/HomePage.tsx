@@ -67,7 +67,7 @@ export function HomePage({ setActivePage, onOpenMembership }: HomePageProps) {
         <div className="mx-auto flex max-w-6xl flex-col gap-7 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#B7D98E]">Bersama membangun kemandirian</p>
-            <h2 className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight sm:text-4xl">Kenali layanan dan keanggotaan BMT Al-Muhajirin.</h2>
+            <h2 className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight sm:text-4xl">Informasi Penting &amp; Event Terbaru</h2>
           </div>
           <button type="button" onClick={onOpenMembership} className="group relative inline-flex shrink-0 items-center justify-center gap-3 border border-[#B7D98E] bg-[#8AC43F] px-7 py-4 text-sm font-bold text-[#123A23] shadow-[0_8px_0_#4D8C28,0_14px_28px_rgba(0,0,0,0.20)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[0_10px_0_#4D8C28,0_18px_32px_rgba(0,0,0,0.24)] active:translate-y-[3px] active:shadow-[0_3px_0_#4D8C28,0_7px_16px_rgba(0,0,0,0.18)]">
             Menjadi Anggota <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

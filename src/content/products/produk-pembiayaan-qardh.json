@@ -1,0 +1,18 @@
+{
+  "id": "produk-pembiayaan-qardh",
+  "category": "unggulan",
+  "name": "Pembiayaan Kebajikan (Qardhul Hasan)",
+  "shortDesc": "Bantuan dana talangan sosial tanpa margin keuntungan untuk kebutuhan darurat pendidikan atau kesehatan anggota.",
+  "fullDesc": "Fungsi baitul maal yang menegaskan sisi kemanusiaan koperasi syariah. Dibiayai dari dana infaq, shadaqah, dan zakat lembaga untuk menopang anggota yang sedang tertimpa musibah atau kebutuhan mendesak.",
+  "iconName": "HeartHandshake",
+  "akad": "Qardhul Hasan (Pinjaman Kebajikan)",
+  "targetUser": "Anggota yang membutuhkan santunan darurat atau modal ultra-mikro",
+  "features": [
+    "Tanpa tambahan biaya atau margin apapun (0% margin)",
+    "Pengembalian pokok murni sesuai kemampuan nyata",
+    "Wujud nyata kepedulian ukhuwah antar sesama anggota"
+  ],
+  "requirements": [
+    "Permohonan tertulis & verifikasi pengurus bidang sosial"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "documents": [
+    {
+      "id": "badan-hukum",
+      "title": "Surat Keputusan Pengesahan Badan Hukum Koperasi",
+      "regNumber": "518/11/BH/DISKOP",
+      "dateIssued": "28 Oktober 2003",
+      "issuer": "Dinas Koperasi dan Usaha Kecil Menengah",
+      "description": "Pengesahan formal status Badan Hukum Koperasi Serba Usaha Syariah BMT Al Muhajirin sebagai badan usaha koperasi resmi yang diakui pemerintah Republik Indonesia.",
+      "category": "badan-hukum"
+    },
+    {
+      "id": "izin-koperasi",
+      "title": "Izin Operasional Koperasi Simpan Pinjam dan Pembiayaan Syariah",
+      "regNumber": "Nomor: 503/014/IOP-KSPPS/DPMPTSP/2021",
+      "dateIssued": "Diperbarui Berkala",
+      "issuer": "Dinas Penanaman Modal & Pelayanan Terpadu Satu Pintu Kab. Banggai",
+      "description": "Izin legal operasional penyelenggaraan kegiatan usaha simpan pinjam dan pembiayaan berdasarkan prinsip syariah di wilayah Kabupaten Banggai.",
+      "category": "izin-operasional"
+    },
+    {
+      "id": "rekomendasi-dps",
+      "title": "Surat Rekomendasi & Sertifikasi Dewan Pengawas Syariah",
+      "regNumber": "Reg: DPS-MUI/SULTENG/BMT-022",
+      "dateIssued": "Tahunan Terverifikasi",
+      "issuer": "Dewan Pengawas Syariah / Majelis Ulama Indonesia",
+      "description": "Ketetapan pengawasan syariah yang memastikan seluruh transaksi, akad jual-beli, dan titipan dana bebas dari unsur riba, maysir, dan gharar.",
+      "category": "syariah"
+    },
+    {
+      "id": "npwp-lembaga",
+      "title": "Nomor Pokok Wajib Pajak (NPWP) Lembaga",
+      "regNumber": "02.481.921.4-831.000",
+      "dateIssued": "Terdaftar Aktif",
+      "issuer": "Direktorat Jenderal Pajak RI",
+      "description": "Kepatuhan perpajakan lembaga koperasi sebagai wajib pajak badan yang taat dan transparan.",
+      "category": "perpajakan"
+    },
+    {
+      "id": "nib",
+      "title": "Nomor Induk Berusaha (NIB) Berbasis Risiko",
+      "regNumber": "9120008412891",
+      "dateIssued": "Kementerian Investasi / BKPM RI",
+      "issuer": "Sistem OSS Republik Indonesia",
+      "description": "Legalitas tunggal untuk kegiatan operasional jasa perantara keuangan koperasi dan unit usaha penggilingan padi.",
+      "category": "izin-operasional"
+    }
+  ]
+}

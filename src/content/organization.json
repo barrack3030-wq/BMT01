@@ -1,0 +1,68 @@
+{
+  "members": [
+    {
+      "id": "1",
+      "category": "pengurus",
+      "role": "Ketua Pengurus",
+      "name": "Drs. H. Ahmad Sudirman",
+      "period": "Periode 2023 - 2028",
+      "bio": "Memimpin arah strategis, integritas kelembagaan, dan kebijakan umum KSU Syariah BMT Al-Muhajirin dalam menjaga stabilitas serta pertumbuhan kemandirian ekonomi anggota."
+    },
+    {
+      "id": "2",
+      "category": "pengurus",
+      "role": "Sekretaris",
+      "name": "M. Fadhil Rahman, S.E.",
+      "period": "Periode 2023 - 2028",
+      "bio": "Bertanggung jawab atas administrasi kelembagaan, pembinaan keanggotaan, kepatuhan hukum keorganisasian, dan dokumentasi Rapat Anggota Tahunan (RAT)."
+    },
+    {
+      "id": "3",
+      "category": "pengurus",
+      "role": "Bendahara",
+      "name": "Hj. Siti Aminah, S.Akt.",
+      "period": "Periode 2023 - 2028",
+      "bio": "Mengawasi perputaran likuiditas simpan pinjam syariah, tata kelola portofolio aset, serta perencanaan anggaran tahunan koperasi secara akuntabel."
+    },
+    {
+      "id": "4",
+      "category": "pengawas",
+      "role": "Ketua Pengawas Operasional",
+      "name": "H. Bambang Irawan, M.M.",
+      "period": "Periode 2023 - 2028",
+      "bio": "Memastikan kepatuhan tata kelola, audit internal berkala, mitigasi risiko keuangan, dan perlindungan penuh atas hak seluruh anggota koperasi."
+    },
+    {
+      "id": "5",
+      "category": "pengawas",
+      "role": "Ketua Dewan Pengawas Syariah (DPS)",
+      "name": "K.H. Muhammad Mansyur, Lc.",
+      "period": "Periode 2023 - 2028",
+      "bio": "Menjamin seluruh produk simpanan, pembiayaan, akad muamalah, dan operasional lembaga senantiasa sejalan dengan fatwa Dewan Syariah Nasional (DSN-MUI)."
+    },
+    {
+      "id": "6",
+      "category": "manajemen",
+      "role": "Manajer Operasional & Pembiayaan",
+      "name": "Rahmat Hidayat, S.E.I.",
+      "period": "Eksekutif Profesional",
+      "bio": "Mengawal operasional layanan harian, analisis pembiayaan produktif mikro, standardisasi kas, serta pendampingan langsung pedagang pasar dan petani."
+    },
+    {
+      "id": "7",
+      "category": "manajemen",
+      "role": "Kepala Unit Sektor Riil (Penggilingan Padi & Briket)",
+      "name": "Ir. Joko Prasetyo",
+      "period": "Eksekutif Profesional",
+      "bio": "Mengelola fasilitas pengolahan gabah petani dan workshop produksi briket ramah lingkungan sebagai penopang nilai tambah komoditas lokal."
+    },
+    {
+      "id": "8",
+      "category": "cabang",
+      "role": "Kepala Kantor Cabang Toili & Sentra Layanan",
+      "name": "Zulkifli Hasan, S.Sos.",
+      "period": "Layanan Lapangan",
+      "bio": "Mengkoordinasi tim funding, kas keliling, dan pendampingan pembiayaan syariah langsung ke sentra pasar tradisional dan desa."
+    }
+  ]
+}

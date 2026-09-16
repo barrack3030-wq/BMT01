@@ -1,0 +1,21 @@
+{
+  "id": "pembiayaan-modal-usaha",
+  "category": "pembiayaan",
+  "name": "Pembiayaan Modal Kerja Usaha (Murabahah)",
+  "shortDesc": "Pembiayaan jual-beli pengadaan barang dagangan, bibit, pakan, atau peralatan usaha untuk pedagang pasar dan UMKM.",
+  "fullDesc": "Solusi pengadaan stok dagang dan permodalan kerja dengan skema Murabahah (jual-beli dengan margin keuntungan yang disepakati bersama di muka). Angsuran tetap, transparan, dan tanpa bunga berlipat.",
+  "iconName": "TrendingUp",
+  "akad": "Murabahah (Jual Beli Syariah)",
+  "targetUser": "Pedagang pasar, pemilik toko kelontong, pedagang kuliner & perintis UMKM",
+  "features": [
+    "Plafon pembiayaan fleksibel dari mikro hingga skala menengah",
+    "Jangka waktu angsuran harian, mingguan, atau bulanan sesuai siklus usaha",
+    "Margin flat dan transparan sejak awal akad",
+    "Proses pendampingan usaha langsung di tempat"
+  ],
+  "requirements": [
+    "KTP Suami/Istri & Kartu Keluarga",
+    "Keterangan usaha / bukti fisik aktivitas usaha produktif",
+    "Agunan jaminan sesuai ketentuan plafon"
+  ]
+}

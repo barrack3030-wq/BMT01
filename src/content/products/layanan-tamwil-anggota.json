@@ -1,0 +1,19 @@
+{
+  "id": "layanan-tamwil-anggota",
+  "category": "layanan",
+  "name": "Layanan Penggilingan Padi & Briket",
+  "shortDesc": "Unit usaha sektor riil koperasi yang melayani pengolahan pasca panen dan pengolahan limbah pertanian ramah lingkungan.",
+  "fullDesc": "Sebagai koperasi serba usaha syariah, BMT Al Muhajirin mengoperasikan fasilitas penggilingan padi modern dan workshop produksi briket untuk memberi nilai tambah nyata pada komoditas lokal Kabupaten Banggai.",
+  "iconName": "Factory",
+  "akad": "Ijarah (Jasa Layanan Sektor Riil)",
+  "targetUser": "Petani padi, pengusaha beras, dan pelaku industri lokal",
+  "features": [
+    "Hasil gilingan beras putih bersih dan rendemen tinggi",
+    "Tarif jasa yang terjangkau bagi sesama anggota",
+    "Briket arang berkualitas tinggi untuk industri dan rumah tangga",
+    "Pemberdayaan tenaga kerja lokal daerah"
+  ],
+  "requirements": [
+    "Terbuka untuk anggota dan masyarakat sekitar Toili"
+  ]
+}

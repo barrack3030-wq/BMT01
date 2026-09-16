@@ -1,0 +1,40 @@
+{
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "Umum",
+      "question": "Apa itu Koperasi Simpan Pinjam Syariah BMT Al Muhajirin?",
+      "answer": "BMT (Baitul Maal wat Tamwil) Al Muhajirin Toili adalah lembaga keuangan mikro syariah berbadan hukum Koperasi Simpan Pinjam Syariah (KSPPS). Lembaga ini memadukan dua fungsi utama: Baitul Tamwil (menghimpun simpanan dan menyalurkan pembiayaan produktif bagi anggota) serta Baitul Maal (mengelola dana sosial infaq, sedekah, dan kebajikan bagi masyarakat)."
+    },
+    {
+      "id": "faq-2",
+      "category": "Keanggotaan",
+      "question": "Bagaimana cara menjadi anggota koperasi?",
+      "answer": "Cara menjadi anggota sangat mudah: (1) Mengisi formulir pendaftaran anggota secara online atau di kantor terdekat, (2) Melampirkan fotokopi KTP dan KK yang masih berlaku, (3) Menyetor Simpanan Pokok (Rp100.000 sekali seumur hidup selama menjadi anggota) dan Simpanan Wajib (mulai Rp10.000 per bulan), (4) Menerima Buku Keanggotaan resmi dan langsung dapat menikmati seluruh fasilitas produk."
+    },
+    {
+      "id": "faq-3",
+      "category": "Keanggotaan",
+      "question": "Apa saja syarat umum menjadi anggota BMT Al Muhajirin?",
+      "answer": "Syarat utama: Warga Negara Indonesia, berakal sehat, berdomisili atau memiliki usaha di wilayah Kabupaten Banggai dan sekitarnya, menyetujui Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) koperasi, serta memiliki itikad baik untuk saling membantu dalam kemakmuran bersama."
+    },
+    {
+      "id": "faq-4",
+      "category": "Simpanan",
+      "question": "Apa saja layanan produk yang disediakan koperasi?",
+      "answer": "Kami menyediakan: Simpanan Sukarela Wadi'ah (bisa ditarik sewaktu-waktu tanpa potongan administrasi bulanan), Simpanan Berjangka Mudharabah (investasi bagi hasil kompetitif), Simpanan Qurban/Ibadah, Pembiayaan Usaha Modal Kerja (Murabahah), Pembiayaan Pertanian/Musiman (Yarnen), Layanan Jasa Penggilingan Padi, Produksi Briket, serta Layanan Pembayaran Tagihan/PPOB."
+    },
+    {
+      "id": "faq-5",
+      "category": "Pembiayaan",
+      "question": "Bagaimana cara mengajukan pembiayaan usaha?",
+      "answer": "Langkah pengajuan pembiayaan: (1) Terdaftar sebagai anggota atau calon anggota, (2) Mengisi formulir pengajuan pembiayaan dengan melampirkan identitas dan keterangan usaha, (3) Petugas analis kami akan melakukan silaturahmi & survei kelayakan usaha ke lokasi Anda, (4) Persetujuan komite pembiayaan, (5) Penandatanganan akad syariah yang transparan, dan (6) Pencairan dana langsung ke rekening simpanan anggota."
+    },
+    {
+      "id": "faq-6",
+      "category": "Umum",
+      "question": "Di mana lokasi kantor koperasi dan jam pelayanannya?",
+      "answer": "Kantor Pusat kami berlokasi di Jl. Ahmad Yani No. 22, Singkoyo, Kecamatan Toili, Kabupaten Banggai, Sulawesi Tengah. Selain itu, kami memiliki unit layanan dan jaringan di berbagai kecamatan sekitar. Jam pelayanan: Senin - Jumat pukul 08.00 - 15.30 WITA dan Sabtu pukul 08.00 - 12.00 WITA."
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+# Konfigurasi Sveltia CMS untuk BMT Al-Muhajirin Toili
+# Kompatibel penuh dengan Git-based workflow (GitHub/GitLab)
+
+backend:
+  name: github
+  repo: barrack3030-wq/BMT01 # Repositori GitHub resmi BMT Al-Muhajirin
+  branch: main
+
+# Mengaktifkan local_backend saat pengujian lokal
+local_backend: true
+
+# Lokasi penyimpanan file media & foto yang diunggah
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Pengaturan identitas dan bahasa antarmuka
+locale: "id"
+site_url: "/"
+display_url: "https://bmtalmuhajirin.co.id"
+
+# Daftar Koleksi Konten Website yang Disederhanakan
+collections:
+  # 1. Warta, Berita & Pengumuman Koperasi
+  - name: "berita"
+    label: "Warta & Berita"
+    label_singular: "Artikel Berita"
+    folder: "src/content/articles"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    summary: "{{title}} ({{date}}) - {{category}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "ID Unik", name: "id", widget: "string", hint: "Format: art-01, art-02" }
+      - { label: "Slug URL", name: "slug", widget: "string", hint: "Gunakan huruf kecil dan tanda hubung, contoh: rat-tahun-buku-2025" }
+      - { label: "Judul Berita", name: "title", widget: "string" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Koperasi", "Ekonomi", "Kegiatan", "Edukasi", "Pengumuman"] }
+      - { label: "Tanggal Publikasi", name: "date", widget: "string", hint: "Contoh: 10 Februari 2026" }
+      - { label: "Penulis / Divisi", name: "author", widget: "string", default: "Sekretariat Koperasi" }
+      - { label: "Tampilkan Sebagai Berita Utama", name: "isFeatured", widget: "boolean", default: false, required: false }
+      - { label: "Foto Sampul Berita", name: "imageUrl", widget: "image" }
+      - { label: "Ringkasan Singkat (Excerpt)", name: "excerpt", widget: "text" }
+      - label: "Paragraf Konten Berita"
+        name: "content"
+        widget: "list"
+        field: { label: "Isi Paragraf", name: "paragraph", widget: "text" }
+
+  # 2. Katalog Produk & Layanan Syariah
+  - name: "produk"
+    label: "Produk & Layanan"
+    label_singular: "Produk"
+    folder: "src/content/products"
+    create: true
+    slug: "{{id}}"
+    format: "json"
+    extension: "json"
+    summary: "{{name}} [{{category}}] - Akad: {{akad}}"
+    fields:
+      - { label: "ID Produk", name: "id", widget: "string", hint: "Contoh: simpanan-wadiah, pembiayaan-modal-usaha" }
+      - { label: "Nama Produk / Layanan", name: "name", widget: "string" }
+      - { label: "Kategori Produk", name: "category", widget: "select", options: [
+          { label: "Simpanan Syariah", value: "simpanan" },
+          { label: "Pembiayaan Usaha / Pertanian", value: "pembiayaan" },
+          { label: "Unit Layanan Sektor Riil", value: "layanan" },
+          { label: "Produk Unggulan & Sosial", value: "unggulan" }
+        ]}
+      - { label: "Akad Syariah", name: "akad", widget: "string", hint: "Contoh: Wadi'ah Yad Dhomanah, Mudharabah, Murabahah, Salam" }
+      - { label: "Ikon Representasi", name: "iconName", widget: "select", options: [
+          "Wallet", "PiggyBank", "CalendarCheck", "TrendingUp", "Wheat", "Factory", "Smartphone", "HeartHandshake"
+        ]}
+      - { label: "Deskripsi Singkat (Tampil di Kartu)", name: "shortDesc", widget: "text" }
+      - { label: "Deskripsi Lengkap (Tampil di Modal Detail)", name: "fullDesc", widget: "text" }
+      - { label: "Sasaran Anggota / Target Pengguna", name: "targetUser", widget: "string" }
+      - label: "Fitur & Keunggulan"
+        name: "features"
+        widget: "list"
+        field: { label: "Poin Keunggulan", name: "item", widget: "string" }
+      - label: "Syarat & Ketentuan"
+        name: "requirements"
+        widget: "list"
+        field: { label: "Poin Persyaratan", name: "item", widget: "string" }
+
+  # 3. Galeri Foto Kegiatan & Dokumentasi
+  - name: "galeri_foto"
+    label: "Galeri Dokumentasi"
+    files:
+      - name: "daftar_galeri"
+        label: "Arsip Foto Dokumentasi"
+        file: "src/content/gallery.json"
+        fields:
+          - label: "Daftar Koleksi Foto"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID Unik", name: "id", widget: "string" }
+              - { label: "Judul Foto", name: "title", widget: "string" }
+              - { label: "Kategori", name: "category", widget: "select", options: ["Pelayanan", "Anggota", "Kegiatan", "Dokumentasi", "Sosial", "Kantor"] }
+              - { label: "Waktu / Bulan Tahun", name: "date", widget: "string", hint: "Contoh: Februari 2026 atau Arsip 1998" }
+              - { label: "Deskripsi Foto", name: "description", widget: "text" }
+              - { label: "File Foto", name: "imageUrl", widget: "image" }
+
+  # 4. Profil Lembaga, Kontak, & Statistik
+  - name: "profil_koperasi"
+    label: "Profil & Informasi Lembaga"
+    files:
+      - name: "informasi_umum"
+        label: "Identitas Koperasi, Kontak & Legalitas"
+        file: "src/content/info.json"
+        fields:
+          - { label: "Nama Singkat Lembaga", name: "name", widget: "string" }
+          - { label: "Nama Lengkap Lembaga", name: "fullName", widget: "string" }
+          - { label: "Bentuk Lembaga", name: "type", widget: "string" }
+          - { label: "Motto Utama", name: "motto", widget: "string" }
+          - { label: "Slogan Pendukung", name: "subMotto", widget: "text" }
+          - { label: "Nomor Badan Hukum", name: "legalNumber", widget: "string" }
+          - { label: "Tanggal Pengesahan Badan Hukum", name: "legalDate", widget: "string" }
+          - { label: "Tanggal Musyawarah Pendirian", name: "foundingDate", widget: "string" }
+          - { label: "Tanggal Peresmian Operasional", name: "inaugurationDate", widget: "string" }
+          - { label: "Modal Awal Swadaya Pendiri", name: "initialCapital", widget: "string" }
+          - { label: "Jumlah Tokoh Pendiri", name: "foundingMembersCount", widget: "number" }
+          - { label: "Lokasi Kantor Pertama 1998", name: "firstOffice", widget: "string" }
+          - label: "Statistik Keberdayaan"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Tahun Pengalaman (Angka)", name: "experienceYears", widget: "string" }
+              - { label: "Label Pengalaman", name: "experienceLabel", widget: "string" }
+              - { label: "Total Anggota (Angka)", name: "totalMembers", widget: "string" }
+              - { label: "Label Anggota", name: "totalMembersLabel", widget: "string" }
+              - { label: "Tahun Melayani (Angka)", name: "servingYears", widget: "string" }
+              - { label: "Label Melayani", name: "servingLabel", widget: "string" }
+              - { label: "Jumlah Wilayah Layanan", name: "serviceAreas", widget: "string" }
+              - { label: "Label Wilayah Layanan", name: "serviceAreasLabel", widget: "string" }
+          - label: "Kantor Pusat & Saluran Kontak Resmi"
+            name: "headOffice"
+            widget: "object"
+            fields:
+              - { label: "Alamat Kantor Pusat", name: "address", widget: "string" }
+              - { label: "Kode Pos", name: "postalCode", widget: "string" }
+              - { label: "Nomor Telepon", name: "phone", widget: "string" }
+              - { label: "Nomor WhatsApp Resmi", name: "whatsapp", widget: "string" }
+              - { label: "Email Informasi Umum", name: "email", widget: "string" }
+              - { label: "Email Layanan Anggota", name: "serviceEmail", widget: "string" }
+              - { label: "Jam Operasional Kas", name: "operatingHours", widget: "string" }
+
+      - name: "sejarah_perjalanan"
+        label: "Sejarah & Tonggak Perkembangan"
+        file: "src/content/history.json"
+        fields:
+          - label: "Daftar Tonggak Sejarah (Milestones)"
+            name: "milestones"
+            widget: "list"
+            fields:
+              - { label: "Tahun / Periode", name: "year", widget: "string" }
+              - { label: "Tanggal Lengkap", name: "date", widget: "string", required: false }
+              - { label: "Label / Badge", name: "badge", widget: "string" }
+              - { label: "Judul Peristiwa", name: "title", widget: "string" }
+              - { label: "Lokasi", name: "location", widget: "string", required: false }
+              - { label: "Uraian Sejarah", name: "description", widget: "text" }
+              - label: "Fakta Historis Penting"
+                name: "facts"
+                widget: "list"
+                field: { label: "Poin Fakta", name: "fact", widget: "string" }
+
+      - name: "struktur_organisasi"
+        label: "Struktur Organisasi & Pengurus"
+        file: "src/content/organization.json"
+        fields:
+          - label: "Daftar Anggota Pengurus, Pengawas & Manajemen"
+            name: "members"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Kategori Amanah", name: "category", widget: "select", options: [
+                  { label: "Dewan Pengurus", value: "pengurus" },
+                  { label: "Dewan Pengawas & DPS", value: "pengawas" },
+                  { label: "Manajemen Operasional", value: "manajemen" },
+                  { label: "Pimpinan Cabang", value: "cabang" }
+                ]}
+              - { label: "Jabatan", name: "role", widget: "string" }
+              - { label: "Nama Lengkap & Gelar", name: "name", widget: "string" }
+              - { label: "Periode / Masa Bakti", name: "period", widget: "string" }
+              - { label: "Uraian Tanggung Jawab (Bio)", name: "bio", widget: "text" }
+
+      - name: "tanya_jawab"
+        label: "Tanya Jawab Anggota (FAQ)"
+        file: "src/content/faqs.json"
+        fields:
+          - label: "Daftar Pertanyaan & Jawaban"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Kategori", name: "category", widget: "string" }
+              - { label: "Pertanyaan", name: "question", widget: "string" }
+              - { label: "Jawaban Lengkap", name: "answer", widget: "text" }
+
+      - name: "kantor_cabang"
+        label: "Jaringan Cabang & Fasilitas Layanan"
+        file: "src/content/branches.json"
+        fields:
+          - label: "Daftar Kantor Cabang / Kas"
+            name: "branches"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Nama Kantor / Unit", name: "name", widget: "string" }
+              - { label: "Tipe Fasilitas", name: "type", widget: "string" }
+              - { label: "Alamat Lengkap", name: "address", widget: "string" }
+              - { label: "Nomor Telepon", name: "phone", widget: "string" }
+              - { label: "Nomor WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Jam Operasional", name: "operatingHours", widget: "string" }
+              - { label: "Nama Penanggung Jawab / Pimpinan", name: "headName", widget: "string" }
+
+      - name: "dokumen_legalitas"
+        label: "Dokumen Perizinan & Legalitas"
+        file: "src/content/legal.json"
+        fields:
+          - label: "Daftar Dokumen Hukum"
+            name: "documents"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Nama Dokumen / Izin", name: "title", widget: "string" }
+              - { label: "Nomor Registrasi / SK", name: "regNumber", widget: "string" }
+              - { label: "Tanggal Terbit / Masa Berlaku", name: "dateIssued", widget: "string" }
+              - { label: "Instansi Penerbit", name: "issuer", widget: "string" }
+              - { label: "Keterangan", name: "description", widget: "text" }
+              - { label: "Klasifikasi", name: "category", widget: "select", options: [
+                  { label: "Badan Hukum Koperasi", value: "badan-hukum" },
+                  { label: "Izin Operasional", value: "izin-operasional" },
+                  { label: "Dewan Pengawas Syariah", value: "syariah" },
+                  { label: "Perpajakan", value: "perpajakan" }
+                ]}

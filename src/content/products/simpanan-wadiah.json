@@ -1,0 +1,21 @@
+{
+  "id": "simpanan-wadiah",
+  "category": "simpanan",
+  "name": "Simpanan Sukarela (Wadi'ah)",
+  "shortDesc": "Simpanan harian yang aman, fleksibel disetor dan ditarik sewaktu-waktu tanpa potongan administrasi bulanan.",
+  "fullDesc": "Simpanan berbasis akad Wadi'ah Yad Dhomanah (titipan yang dijamin). Dana titipan dikelola secara produktif dan amanah oleh koperasi, di mana anggota memperoleh kemudahan transaksi harian serta berkesempatan menerima bonus sukarela tahunan.",
+  "iconName": "Wallet",
+  "akad": "Wadi'ah Yad Dhomanah",
+  "targetUser": "Seluruh Anggota, Pedagang, Pelajar & Masyarakat Umum",
+  "features": [
+    "Setoran awal ringan mulai Rp20.000",
+    "Bebas biaya administrasi bulanan",
+    "Penarikan tunai dapat dilakukan setiap jam kerja",
+    "Buku tabungan resmi koperasi"
+  ],
+  "requirements": [
+    "Fotokopi KTP / Identitas diri yang masih berlaku",
+    "Terdaftar sebagai anggota / calon anggota koperasi",
+    "Mengisi formulir pembukaan simpanan"
+  ]
+}

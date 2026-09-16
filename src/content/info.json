@@ -1,0 +1,33 @@
+{
+  "name": "BMT Al-Muhajirin",
+  "fullName": "KSU Syariah BMT Al-Muhajirin Toili",
+  "type": "Koperasi Simpan Pinjam dan Pembiayaan Syariah (KSPPS)",
+  "motto": "Berjuang Bersama Ummat Keluar Dari Riba",
+  "subMotto": "Membangun kemandirian ekonomi keluarga dan masyarakat Toili melalui sinergi koperasi berbasis syariah yang amanah, adil, dan berkah.",
+  "foundingDate": "14 Agustus 1998",
+  "inaugurationDate": "16 November 1998",
+  "legalDate": "28 Oktober 2003",
+  "legalNumber": "518/11/BH/DISKOP",
+  "initialCapital": "Rp8.488.000",
+  "foundingMembersCount": 26,
+  "firstOffice": "Jl. Kompleks Pasar Cendana Pura, Kec. Toili, Kab. Banggai",
+  "headOffice": {
+    "address": "Jl. Ahmad Yani No. 22, Singkoyo, Kec. Toili, Kab. Banggai, Sulawesi Tengah",
+    "postalCode": "94765",
+    "phone": "(0453) 210088",
+    "whatsapp": "0812-4290-8899",
+    "email": "info@bmtalmuhajirin.co.id",
+    "serviceEmail": "layanan@bmtalmuhajirin.co.id",
+    "operatingHours": "Senin - Jumat: 08.00 - 15.30 WITA | Sabtu: 08.00 - 12.00 WITA"
+  },
+  "stats": {
+    "experienceYears": "25+",
+    "experienceLabel": "Tahun Pengalaman",
+    "totalMembers": "12.500+",
+    "totalMembersLabel": "Anggota Terdaftar",
+    "servingYears": "27+",
+    "servingLabel": "Tahun Melayani Masyarakat",
+    "serviceAreas": "12",
+    "serviceAreasLabel": "Wilayah Layanan di Kab. Banggai"
+  }
+}

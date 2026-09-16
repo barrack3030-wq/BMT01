@@ -1,0 +1,18 @@
+{
+  "id": "produk-pembayaran-ppob",
+  "category": "layanan",
+  "name": "Layanan Payment PPOB & Kas Keliling",
+  "shortDesc": "Pembayaran tagihan listrik, pulsa, BPJS, transfer dana antar-bank, serta layanan jemput bola kas keliling ke pasar.",
+  "fullDesc": "Kemudahan transaksi finansial modern di dekat tempat usaha anggota. Petugas koperasi hadir langsung ke pasar-pasar tradisional di Toili dengan perangkat mobile banking koperasi.",
+  "iconName": "Smartphone",
+  "akad": "Wakalah bil Ujrah",
+  "targetUser": "Seluruh warga dan pedagang di sentra pasar tradisional",
+  "features": [
+    "Layanan jemput setoran harian di lapak pasar",
+    "Pembayaran PLN, PDAM, pulsa, dan BPJS cepat",
+    "Kemudahan setor-tarik tanpa harus meninggalkan tempat jualan"
+  ],
+  "requirements": [
+    "Nomor rekening simpanan BMT Al Muhajirin"
+  ]
+}

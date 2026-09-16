@@ -1,0 +1,21 @@
+{
+  "id": "simpanan-berjangka",
+  "category": "simpanan",
+  "name": "Simpanan Berjangka Mudharabah",
+  "shortDesc": "Investasi syariah dengan nisbah bagi hasil yang kompetitif, halal, dan berkah untuk jangka waktu 3, 6, hingga 12 bulan.",
+  "fullDesc": "Simpanan investasi murni berjangka dengan akad Mudharabah Muthlaqah. Dana anggota disalurkan khusus pada pembiayaan sektor usaha riil yang produktif, dengan pembagian hasil keuntungan yang adil dan transparan.",
+  "iconName": "PiggyBank",
+  "akad": "Mudharabah Muthlaqah",
+  "targetUser": "Anggota yang merencanakan keuangan jangka menengah & panjang",
+  "features": [
+    "Jangka waktu fleksibel: 3, 6, dan 12 bulan",
+    "Nisbah bagi hasil menarik di atas rata-rata",
+    "Bagi hasil dapat dicairkan bulanan atau diakumulasi",
+    "Sertifikat bilyet simpanan berjangka resmi"
+  ],
+  "requirements": [
+    "Telah menjadi anggota koperasi",
+    "Minimal penempatan dana Rp1.000.000",
+    "Fotokopi KTP & KK"
+  ]
+}

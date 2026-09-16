@@ -1,0 +1,44 @@
+{
+  "branches": [
+    {
+      "id": "pusat",
+      "name": "Kantor Pusat Singkoyo",
+      "type": "Kantor Pusat",
+      "address": "Jl. Ahmad Yani No. 22, Singkoyo, Kec. Toili, Kab. Banggai, Sulawesi Tengah",
+      "phone": "(0453) 210088",
+      "whatsapp": "0812-4290-8899",
+      "operatingHours": "Senin - Jumat 08.00 - 15.30 WITA | Sabtu 08.00 - 12.00 WITA",
+      "headName": "Rahmat Hidayat, S.E.I."
+    },
+    {
+      "id": "cabang-cendana",
+      "name": "Kantor Kas Kompleks Pasar Cendana Pura",
+      "type": "Kantor Kas",
+      "address": "Jl. Kompleks Pasar Cendana Pura, Kec. Toili, Kab. Banggai",
+      "phone": "(0453) 210091",
+      "whatsapp": "0812-4290-8891",
+      "operatingHours": "Setiap Hari Pasar: 07.30 - 14.00 WITA",
+      "headName": "Ahmad Fauzi"
+    },
+    {
+      "id": "cabang-moilong",
+      "name": "Kantor Layanan Wilayah Moilong",
+      "type": "Kantor Cabang",
+      "address": "Jl. Trans Sulawesi, Kec. Moilong, Kab. Banggai",
+      "phone": "(0453) 210095",
+      "whatsapp": "0812-4290-8895",
+      "operatingHours": "Senin - Jumat 08.00 - 15.00 WITA",
+      "headName": "Zulkifli Hasan, S.Sos."
+    },
+    {
+      "id": "unit-padi",
+      "name": "Unit Penggilingan Padi & Sektor Riil",
+      "type": "Kantor Cabang",
+      "address": "Kawasan Sentra Pangan Dataran Toili, Kab. Banggai",
+      "phone": "(0453) 210098",
+      "whatsapp": "0812-4290-8898",
+      "operatingHours": "Senin - Sabtu 07.30 - 16.00 WITA",
+      "headName": "Ir. Joko Prasetyo"
+    }
+  ]
+}

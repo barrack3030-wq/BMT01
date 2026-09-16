@@ -1,0 +1,20 @@
+{
+  "id": "simpanan-qurban-haji",
+  "category": "simpanan",
+  "name": "Simpanan Qurban & Ibadah",
+  "shortDesc": "Program tabungan terencana untuk mempermudah anggota melaksanakan ibadah qurban dan persiapan ibadah haji/umrah.",
+  "fullDesc": "Simpanan khusus yang dirancang dengan setoran berkala terjadwal agar anggota dapat menunaikan ibadah qurban tahunan atau ongkos naik haji tanpa beban finansial mendadak.",
+  "iconName": "CalendarCheck",
+  "akad": "Wadi'ah / Mudharabah Terikat",
+  "targetUser": "Keluarga muslim yang merencanakan ibadah tahunan",
+  "features": [
+    "Setoran fleksibel mingguan atau bulanan",
+    "Pencairan disesuaikan menjelang Idul Adha atau jadwal keberangkatan",
+    "Kemitraan penyediaan hewan qurban berkualitas di Toili",
+    "Bebas biaya administrasi"
+  ],
+  "requirements": [
+    "KTP & Formulir pendaftaran simpanan ibadah",
+    "Komitmen setoran berkala"
+  ]
+}

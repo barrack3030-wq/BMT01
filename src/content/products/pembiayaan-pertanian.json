@@ -1,0 +1,21 @@
+{
+  "id": "pembiayaan-pertanian",
+  "category": "pembiayaan",
+  "name": "Pembiayaan Musiman Pertanian & Padi",
+  "shortDesc": "Pembiayaan modal tanam, pupuk, dan alsintan bagi petani padi sawah dan perkebunan dengan pelunasan saat panen (Yarnen).",
+  "fullDesc": "Didesain khusus untuk masyarakat agraris Toili dan Banggai. Petani mendapatkan kepastian pasokan sarana produksi tepat waktu tanpa tertekan tengkulak, dengan pembayaran fleksibel mengikuti kalender panen raya.",
+  "iconName": "Wheat",
+  "akad": "Salam / Murabahah Pertanian",
+  "targetUser": "Kelompok tani padi sawah, jagung, dan perkebunan rakyat",
+  "features": [
+    "Sistem bayar panen (yarnen) yang selaras dengan kalender pertanian",
+    "Kemudahan akses pupuk dan sarana produksi",
+    "Dukungan integrasi unit penggilingan padi koperasi",
+    "Konsultasi dan pendampingan lapangan"
+  ],
+  "requirements": [
+    "Kepemilikan / bukti garap lahan sawah/kebun produktif",
+    "Surat rekomendasi kelompok tani / desa setempat",
+    "Identitas diri dan anggota keluarga"
+  ]
+}

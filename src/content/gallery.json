@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": "gal-1",
+      "title": "Pelayanan Ramah di Front Office Kantor Pusat Singkoyo",
+      "category": "Pelayanan",
+      "date": "Februari 2026",
+      "description": "Suasana pelayanan transaksi simpanan dan konsultasi pembiayaan oleh staf customer service yang profesional dan bersahabat.",
+      "imageUrl": "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-2",
+      "title": "Aktivitas Pedagang Mitra di Pasar Tradisional Toili",
+      "category": "Anggota",
+      "date": "Januari 2026",
+      "description": "Para pedagang anggota yang telah puluhan tahun bermitra bersama BMT Al Muhajirin dalam permodalan usaha pasar tanpa jeratan rente.",
+      "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-3",
+      "title": "Rapat Anggota Tahunan (RAT) Pertanggungjawaban Pengurus",
+      "category": "Kegiatan",
+      "date": "Tahun 2026",
+      "description": "Forum musyawarah tertinggi anggota koperasi yang diselenggarakan penuh kekeluargaan dan musyawarah mufakat.",
+      "imageUrl": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-4",
+      "title": "Fasilitas Unit Penggilingan Padi Koperasi di Toili",
+      "category": "Dokumentasi",
+      "date": "Desember 2025",
+      "description": "Mesin penggilingan gabah berkapasitas memadai untuk melayani petani anggota saat musim panen padi di dataran Toili.",
+      "imageUrl": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-5",
+      "title": "Penyaluran Santunan Sosial & Paket Sembako Berkah",
+      "category": "Sosial",
+      "date": "Oktober 2025",
+      "description": "Fungsi baitul maal menyalurkan zakat, infaq, dan shadaqah kepada para dhuafa dan anak yatim di sekitar kantor cabang.",
+      "imageUrl": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-6",
+      "title": "Gedung Kantor Pusat Singkoyo yang Representatif",
+      "category": "Kantor",
+      "date": "Tahun 2025",
+      "description": "Kantor Pusat KSU Syariah BMT Al Muhajirin di Jl. Ahmad Yani No. 22 Singkoyo, Toili, Kabupaten Banggai.",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-7",
+      "title": "Pendampingan Usaha Mikro dan Monitoring Lapangan",
+      "category": "Pelayanan",
+      "date": "Agustus 2025",
+      "description": "Petugas lapangan BMT Al Muhajirin melakukan kunjungan silaturahmi dan pendampingan kelayakan usaha anggota.",
+      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "gal-8",
+      "title": "Dokumentasi Arsip Sejarah Pendirian Awal Tahun 1998",
+      "category": "Dokumentasi",
+      "date": "Arsip 1998",
+      "description": "Napak tilas kebersamaan 26 anggota pendiri yang memulai langkah mulia dari kawasan Pasar Cendana Pura Toili.",
+      "imageUrl": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=900&q=80"
+    }
+  ]
+}

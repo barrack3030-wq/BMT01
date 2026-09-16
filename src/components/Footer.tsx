@@ -136,6 +136,10 @@ export function Footer({ setActivePage }: FooterProps) {
             <button onClick={() => handleNav('kontak')} className="hover:text-white transition-colors cursor-pointer">
               Kontak Layanan
             </button>
+            <span>•</span>
+            <a href="./admin/" className="hover:text-[#F4C542] transition-colors cursor-pointer inline-flex items-center gap-1 text-[#F7F6F1]/75 hover:underline">
+              Kelola Konten (CMS)
+            </a>
           </div>
         </div>
 

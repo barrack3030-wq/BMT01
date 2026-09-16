@@ -9,9 +9,9 @@ interface HeaderProps {
   onOpenMembershipModal?: () => void;
 }
 
-type DropdownKey = 'tentang' | 'produk' | 'keanggotaan' | 'informasi' | 'galeri';
+type DropdownKey = 'tentang' | 'produk' | 'keanggotaan' | 'informasi';
 
-export function Header({ activePage, setActivePage }: HeaderProps) {
+export function Header({ activePage, setActivePage, onOpenMembershipModal }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<DropdownKey | null>(null);
@@ -21,14 +21,11 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
     setActiveDropdown(null);
     setMobileExpanded(null);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleMobile = (key: DropdownKey) => {
     setMobileExpanded((current) => current === key ? null : key);
   };
-
-  const isTentangActive = ['profil', 'sejarah', 'visi-misi', 'struktur-organisasi', 'legalitas'].includes(activePage);
 
   const dropdowns: Record<DropdownKey, { label: string; page: PageType; items: { label: string; sub?: string; page?: PageType }[] }> = {
     tentang: {
@@ -38,8 +35,7 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
         { label: 'Profil Koperasi', page: 'profil' },
         { label: 'Sejarah', page: 'sejarah' },
         { label: 'Visi & Misi', page: 'visi-misi' },
-        { label: 'Struktur Organisasi', page: 'struktur-organisasi' },
-        { label: 'Legalitas', page: 'legalitas' },
+        { label: 'Struktur & Legalitas', page: 'struktur-organisasi' },
       ],
     },
     produk: {
@@ -49,16 +45,14 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
         { label: 'Simpanan', page: 'produk-layanan', sub: 'simpanan' },
         { label: 'Pembiayaan', page: 'produk-layanan', sub: 'pembiayaan' },
         { label: 'Layanan Anggota', page: 'produk-layanan', sub: 'layanan' },
-        { label: 'Produk Unggulan', page: 'produk-layanan', sub: 'unggulan' },
       ],
     },
     keanggotaan: {
       label: 'Keanggotaan',
       page: 'keanggotaan',
       items: [
-        { label: 'Syarat Keanggotaan', page: 'keanggotaan', sub: 'syarat' },
-        { label: 'Cara Bergabung', page: 'keanggotaan', sub: 'cara-bergabung' },
-        { label: 'Hak & Kewajiban Anggota', page: 'keanggotaan', sub: 'hak-kewajiban' },
+        { label: 'Syarat & Cara Bergabung', page: 'keanggotaan', sub: 'syarat' },
+        { label: 'Hak & Kewajiban', page: 'keanggotaan', sub: 'hak-kewajiban' },
         { label: 'Informasi Anggota', page: 'keanggotaan', sub: 'informasi' },
       ],
     },
@@ -67,33 +61,23 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
       page: 'berita',
       items: [
         { label: 'Berita Koperasi', page: 'berita', sub: 'Berita' },
-        { label: 'Artikel', page: 'berita', sub: 'Artikel' },
         { label: 'Kegiatan', page: 'berita', sub: 'Kegiatan' },
         { label: 'Pengumuman', page: 'berita', sub: 'Pengumuman' },
-      ],
-    },
-    galeri: {
-      label: 'Galeri',
-      page: 'galeri',
-      items: [
-        { label: 'Foto', page: 'galeri' },
-        { label: 'Video', page: 'galeri' },
+        { label: 'Kontak', page: 'kontak' },
       ],
     },
   };
 
   const activeFor = (key: DropdownKey) => {
-    if (key === 'tentang') return isTentangActive;
+    if (key === 'tentang') return ['profil', 'sejarah', 'visi-misi', 'struktur-organisasi', 'legalitas'].includes(activePage);
     if (key === 'produk') return activePage === 'produk-layanan';
     if (key === 'keanggotaan') return activePage === 'keanggotaan';
-    if (key === 'informasi') return activePage === 'berita';
-    return activePage === 'galeri';
+    return ['berita', 'kontak'].includes(activePage);
   };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#202522]/10 bg-white">
       <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between gap-8 px-5 lg:px-8">
-        {/* Logo */}
         <button
           type="button"
           onClick={() => go('beranda')}
@@ -103,17 +87,8 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
           <BmtLogo variant="compact" />
         </button>
 
-        {/* Desktop navigation */}
         <nav className="hidden min-w-0 flex-1 items-center justify-end lg:flex" aria-label="Navigasi utama">
           <div className="flex items-center gap-5 xl:gap-7">
-            <button
-              type="button"
-              onClick={() => go('beranda')}
-              className={`whitespace-nowrap border-b-2 border-transparent bg-transparent py-2 text-sm font-medium transition-colors ${activePage === 'beranda' ? 'border-[#0B3D2E] text-[#0B3D2E]' : 'text-[#202522] hover:text-[#0B3D2E]'}`}
-            >
-              Beranda
-            </button>
-
             {(Object.keys(dropdowns) as DropdownKey[]).map((key) => {
               const menu = dropdowns[key];
               return (
@@ -127,13 +102,15 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
                     type="button"
                     onClick={() => go(menu.page)}
                     className={`flex items-center gap-1 whitespace-nowrap border-b-2 border-transparent bg-transparent py-2 text-sm font-medium transition-colors ${activeFor(key) ? 'border-[#0B3D2E] text-[#0B3D2E]' : 'text-[#202522] hover:text-[#0B3D2E]'}`}
+                    aria-haspopup="menu"
+                    aria-expanded={activeDropdown === key}
                   >
                     {menu.label}
                     <ChevronDown className={`h-3.5 w-3.5 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
                   </button>
 
                   {activeDropdown === key && (
-                    <div className="absolute left-0 top-full w-60 pt-2">
+                    <div className="absolute left-0 top-full z-[70] w-60 pt-2">
                       <div className="border border-[#202522]/10 bg-white py-2 shadow-[0_14px_30px_rgba(0,0,0,0.10)]">
                         {menu.items.map((item) => (
                           <button
@@ -152,18 +129,16 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
               );
             })}
 
-            {/* Contact is intentionally the last item: logo → menu → contact. */}
             <button
               type="button"
-              onClick={() => go('kontak')}
-              className={`whitespace-nowrap border-b-2 border-transparent bg-transparent py-2 text-sm font-medium transition-colors ${activePage === 'kontak' ? 'border-[#0B3D2E] text-[#0B3D2E]' : 'text-[#202522] hover:text-[#0B3D2E]'}`}
+              onClick={() => onOpenMembershipModal?.()}
+              className="whitespace-nowrap bg-[#0B3D2E] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#145A42]"
             >
-              Kontak
+              Daftar Sekarang
             </button>
           </div>
         </nav>
 
-        {/* Mobile menu button */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen((open) => !open)}
@@ -174,14 +149,9 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
         </button>
       </div>
 
-      {/* Mobile navigation */}
       {mobileMenuOpen && (
-        <div className="border-t border-[#202522]/10 bg-white lg:hidden">
+        <div className="relative z-[60] border-t border-[#202522]/10 bg-white lg:hidden">
           <nav className="mx-auto max-w-[1440px] px-5 py-3" aria-label="Navigasi mobile">
-            <button type="button" onClick={() => go('beranda')} className="w-full border-b border-[#202522]/8 py-3 text-left text-sm font-medium text-[#202522]">
-              Beranda
-            </button>
-
             {(Object.keys(dropdowns) as DropdownKey[]).map((key) => {
               const menu = dropdowns[key];
               return (
@@ -212,8 +182,12 @@ export function Header({ activePage, setActivePage }: HeaderProps) {
               );
             })}
 
-            <button type="button" onClick={() => go('kontak')} className="w-full py-3 text-left text-sm font-medium text-[#202522]">
-              Kontak
+            <button
+              type="button"
+              onClick={() => onOpenMembershipModal?.()}
+              className="mt-4 w-full bg-[#0B3D2E] px-5 py-3 text-left text-sm font-semibold text-white"
+            >
+              Daftar Sekarang
             </button>
           </nav>
         </div>

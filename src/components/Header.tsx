@@ -194,8 +194,8 @@ export function Header({ activePage, setActivePage, onOpenMembershipModal }: Hea
       )}
 
       {activePage === 'beranda' && (
-        <div className="overflow-hidden border-y border-[#DFAC22] bg-[#F4C542] text-[#0B3D2E] py-1 sm:py-1.5">
-          <marquee direction="left" scrollamount="5" className="block text-[12.5px] sm:text-[13px] font-semibold tracking-wide leading-snug">
+        <div className="overflow-hidden border-y border-[#C9A93A]/70 bg-[#E8D28A] text-[#174D2C] py-1 sm:py-1.5">
+          <marquee direction="left" scrollamount="3" className="block text-[11.5px] sm:text-[12px] font-medium tracking-wide leading-snug">
             Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi
           </marquee>
         </div>

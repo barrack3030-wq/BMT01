@@ -16,13 +16,6 @@ export function Footer({ setActivePage }: FooterProps) {
     <footer className="bg-[#0B3D2E] text-white pt-20 pb-12 border-t border-[#145A42]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        {/* Latest information ticker */}
-        <div className="mb-10 overflow-hidden border-y border-[#D6A900] bg-[#F4C542] text-[#174D2C]">
-          <marquee direction="left" scrollamount="5" className="py-3.5 text-sm font-semibold tracking-wide">
-            Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi
-          </marquee>
-        </div>
-
         {/* Main Footer Grid: 4 Columns per Section 17 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           

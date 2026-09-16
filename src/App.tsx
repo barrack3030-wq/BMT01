@@ -92,25 +92,6 @@ export default function App() {
         onOpenMembershipModal={() => setIsMembershipModalOpen(true)}
       />
 
-      {activePage === 'beranda' && (
-        <div className="overflow-hidden border-y border-[#D6A900] bg-[#F4C542] text-[#174D2C] h-[42px] flex items-center">
-          <div className="ticker-track flex w-max whitespace-nowrap text-sm font-semibold tracking-wide">
-            <span className="pr-16">Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi</span>
-            <span className="pr-16">Informasi Terbaru &nbsp; • &nbsp; Pendaftaran anggota BMT Al-Muhajirin tetap dibuka &nbsp; • &nbsp; Pantau informasi layanan dan kegiatan terbaru BMT Al-Muhajirin di halaman Informasi</span>
-          </div>
-          <style>{`
-            .ticker-track {
-              animation: bmt-ticker 28s linear infinite;
-              will-change: transform;
-            }
-            @keyframes bmt-ticker {
-              from { transform: translateX(0); }
-              to { transform: translateX(-50%); }
-            }
-          `}</style>
-        </div>
-      )}
-
       <main className={activePage === 'beranda' ? 'home-page-active flex-1' : 'flex-1'}>
         {activePage === 'beranda' && (
           <>

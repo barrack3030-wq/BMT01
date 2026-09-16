@@ -1,38 +1,60 @@
 import { ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { PageType } from '../types';
 
 interface HeroSliderProps {
   setActivePage: (page: PageType, subSection?: string) => void;
 }
 
-export function HeroSlider({ setActivePage }: HeroSliderProps) {
-  return (
-    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#08752F] text-white">
-      <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center justify-center px-6 py-16 text-center">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-7 flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-white/95">
-            <span className="h-2 w-2 rounded-full bg-[#D4E63D]" />
-            <span>BMT AL-MUHAJIRIN</span>
-          </div>
+const slides = [
+  { image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=88', alt: 'Gedung dan lingkungan kantor' },
+  { image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=88', alt: 'Lingkungan pelayanan profesional' },
+  { image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=88', alt: 'Aktivitas dan kebersamaan anggota' },
+];
 
-          <h1 className="font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+export function HeroSlider({ setActivePage }: HeroSliderProps) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % slides.length), 5500);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#06451F] text-white">
+      {slides.map((slide, index) => (
+        <div key={slide.image} className={`absolute inset-0 transition-opacity duration-1000 ${index === active ? 'opacity-100' : 'opacity-0'}`} aria-hidden={index !== active}>
+          <img src={slide.image} alt={slide.alt} className="h-full w-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+      ))}
+
+      {/* Deep-green brand wash: photos remain visible while the whole hero stays green */}
+      <div className="absolute inset-0 bg-[#06451F]/65 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-[#06451F]/35" />
+
+      <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center justify-center px-6 py-20 text-center">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.3em] text-white">BMT AL-MUHAJIRIN</p>
+          <h1 className="font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
             Membangun Kemandirian
             <span className="block">Ekonomi Ummat</span>
           </h1>
-
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/90 sm:text-lg">
-            Berjuang bersama anggota untuk membangun ekonomi yang lebih mandiri melalui layanan koperasi berbasis prinsip syariah.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white sm:text-lg">
+            Berjuang bersama anggota untuk membangun ekonomi yang lebih mandiri melalui layanan keuangan berbasis koperasi dan prinsip syariah.
           </p>
-
-          <div className="mt-10 flex justify-center">
+          <div className="mt-9 flex justify-center">
             <button
               type="button"
               onClick={() => setActivePage('profil')}
-              className="group inline-flex min-w-[210px] items-center justify-center gap-3 border border-white bg-white px-8 py-4 text-sm font-bold text-[#08752F] shadow-[0_6px_0_rgba(0,0,0,0.18),0_14px_28px_rgba(0,0,0,0.16)] transition-all duration-200 hover:-translate-y-1 hover:bg-[#F5F8E8] hover:shadow-[0_8px_0_rgba(0,0,0,0.18),0_18px_32px_rgba(0,0,0,0.18)] active:translate-y-[2px] active:shadow-[0_2px_0_rgba(0,0,0,0.18),0_8px_16px_rgba(0,0,0,0.14)]"
+              className="group inline-flex min-w-[205px] items-center justify-center gap-3 rounded-[4px] border border-white/60 bg-white px-8 py-4 text-sm font-bold text-[#06451F] shadow-[0_7px_18px_rgba(0,0,0,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#F4F8E8] hover:shadow-[0_10px_24px_rgba(0,0,0,0.28)] active:translate-y-[2px]"
             >
-              <span>Kenal Lebih Dekat</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              Kenal Lebih Dekat <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
+          </div>
+          <div className="mt-10 flex justify-center gap-2" aria-label="Pilihan foto hero">
+            {slides.map((slide, index) => (
+              <button key={slide.image} type="button" onClick={() => setActive(index)} aria-label={`Tampilkan foto ${index + 1}`} className={`h-1.5 rounded-full transition-all ${index === active ? 'w-10 bg-white' : 'w-5 bg-white/45 hover:bg-white/75'}`} />
+            ))}
           </div>
         </div>
       </div>
